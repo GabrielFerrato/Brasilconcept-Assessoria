@@ -7,15 +7,14 @@
 
 :root {
   --hue: 370;
-  --primary-color: #DCE3E9;
-  --headline: #DCE3E9;
-  --paragraph: hsl(210, 9%, 31%);
+  --primary-color: #fafafa;
+  --headline: hsl(0, 0%, 100%);
+  --paragraph: #222E50;
 
   --brand-beige: hsl(39, 100%, 97%);
   --brand-light: #222E50;
-  --brand-light-2:#294C7C;
-  --brand-dark: #00453A;
-  --gray-headline: #212529; 
+  --brand-light-2: hsl(calc(var(--hue) + 10), 14%, 97%);
+  --brand-dark: hsl(var(--hue), 100%, 14%);
 
   --bg-light: hsl(180, 14%, 97%);
 
@@ -111,7 +110,7 @@ section .content p {
   padding: 1.6rem 3.2rem;
   width: fit-content;
 
-  color: #222E50;
+  color: white;
   font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -181,7 +180,7 @@ nav .wrapper {
 }
 
 nav.scroll {
-  background: #C8C8C8;
+  background: var(--primary-color);
 }
 
 nav button {
@@ -224,7 +223,7 @@ body.menu-expanded .close-menu {
 body.menu-expanded .menu {
   top: 0;
   left: 0;
-  background: #C8C8C8;
+  background: var(--primary-color);
 
   width: 100vw;
   height: 100vh;
@@ -335,7 +334,7 @@ body.menu-expanded button path {
   padding-block: 4rem;
   margin-inline: auto;
 
-  background-color: #DCE3E9;
+  background-color: var(--brand-beige);
   border: 1px solid var(--brand-light);
   border-radius: 0.6rem;
 
@@ -347,7 +346,7 @@ body.menu-expanded button path {
 
 #home .stat h3 {
   font-size: 4.8rem;
-  color: var(--gray-headline);
+  color: var(--headline);
   line-height: 130%;
 
   margin-bottom: 0.4rem;
@@ -355,7 +354,7 @@ body.menu-expanded button path {
 
 #home .stat p {
   margin: 0;
-  color: var(--gray-headline);
+  color: var(--primary-color);
   font-size: 1.6rem;
   line-height: 150%;
 }
@@ -425,7 +424,7 @@ body.menu-expanded button path {
 
 /*=== FOOTER =================================*/
 footer {
-  background-color: #C8C8C8;
+  background-color: var(--primary-color);
   padding-block: 6rem;
 
   text-align: left;
@@ -745,38 +744,5 @@ footer .social-links {
   }
 
   footer p {
-    margin-bottom: 0;
-    color: var(--primary-color);
-  }}
- 
-  
-  /* === CARROSSEL SOBRE NÓS =================================*/
-#about .col-b {
-  /* Garante que o carrossel se ajuste bem na coluna */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.carousel-container {
-  width: 100%;
-  max-width: 48rem; /* Tamanho similar a outras imagens do site */
-  border-radius: 0.6rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden; 
-  position: relative;
-}
-
-.carousel-slide {
-  display: flex;
-  width: 100%; 
-  transition: transform 0.7s ease-in-out; 
-}
-
-.carousel-slide img {
-  width: 100%;
-  flex-shrink: 0;
-  object-fit: cover;
-  height: 42rem; /* Altura consistente com a imagem da seção Home */
-  display: block;
-}
+    margin-bottom: 0
+  }
