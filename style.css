@@ -7,7 +7,7 @@
 
 :root {
   --hue: 370;
-  --primary-color: #fafafa;
+  --primary-color: #222E50;
   --headline: hsl(0, 0%, 100%);
   --paragraph: #222E50;
 
@@ -69,7 +69,7 @@ section header h4 {
   font-weight: 700;
   line-height: 150%;
   letter-spacing: 0.08rem;
-  color: var(--primary-color);
+  color: #ffffff;
 
   text-transform: uppercase;
 
@@ -100,7 +100,7 @@ section .content p {
 }
 
 .button {
-  background: var(--primary-color);
+  background:  #ffffff;
 
   border: none;
   border-radius: 4rem;
@@ -110,7 +110,7 @@ section .content p {
   padding: 1.6rem 3.2rem;
   width: fit-content;
 
-  color: white;
+  color: var(--primary-color);
   font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -745,4 +745,4 @@ footer .social-links {
 
   footer p {
     margin-bottom: 0
-  }
+  }}
