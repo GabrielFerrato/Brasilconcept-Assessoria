@@ -383,11 +383,16 @@ body.menu-expanded button path {
 #services .card h3 {
   margin-block: 1.6rem;
 }
+ #services p {
+    color: #222E50;
+
+  }
+
 
 /*=== ABOUT =================================*/
 #about {
   text-align: left;
-  background-color: var(--brand-beige);
+  background-color: #DCE3E9;
 }
 
 #about header h2 {
@@ -696,7 +701,7 @@ footer .social-links {
     width: 30%;
     flex-grow: 1;
   }
-
+ 
   /*=== ABOUT =================================*/
   #about .wrapper {
     grid-template-columns: 48rem 1fr;
