@@ -126,7 +126,7 @@ section .content p {
 }
 
 .button:hover {
-  background-color:  #4FCE5D;
+  background-color:  #075E54 ;
 }
 
 .social-links {
@@ -392,7 +392,7 @@ body.menu-expanded button path {
 /*=== ABOUT =================================*/
 #about {
   text-align: left;
-  background-color: #DCE3E9;
+  background-color: #DCE3E9  ;
 }
 
 #about header h2 {
@@ -402,6 +402,7 @@ body.menu-expanded button path {
 #about .content p {
   margin-top: 2.4rem;
   margin-bottom: 6rem;
+  color: black;
 }
 
 /*=== CONTACT =================================*/
@@ -411,6 +412,10 @@ body.menu-expanded button path {
 
 #contact header {
   margin-bottom: 3.2rem;
+}
+#contact .button{
+  background-color: #222E50;
+  color: #ffffff;
 }
 
 #contact ul {
