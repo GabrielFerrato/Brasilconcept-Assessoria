@@ -797,3 +797,18 @@ footer .social-links {
 }
 
 }
+
+/* Centralizar o logo grande no mobile */
+#home .col-b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Garantir que o SVG fique centralizado e responsivo */
+#home .col-b svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  height: auto;
+}
