@@ -132,7 +132,7 @@ section .content p {
 .social-links {
  display: flex;
  align-items: center;
- justify-content: center;
+ justify-content: center; /* Centralizado por padrão (mobile) */
  gap: 3.2rem;
 }
 
@@ -436,39 +436,35 @@ body.menu-expanded button path {
 footer {
  background-color: var(--primary-color);
  padding-block: 6rem;
- 
-  /* 1. CORREÇÃO: Centraliza tudo no mobile */
- text-align: center; 
-
+ text-align: center; /* Padrão mobile: centralizado */
  color: white;
 }
 
-/* 2. CORREÇÃO: Faz o wrapper empilhar e centrar os itens no mobile */
+/* No mobile, o wrapper é flex, empilhado e centralizado */
 footer .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3.2rem; /* Espaço entre o logo/texto e os ícones */
+  gap: 3.2rem; /* Espaço entre o col-a e col-b */
+  
+  /* Garante que não use Grid no mobile */
+  grid-template-columns: none;
+  grid-template-areas: none;
 }
 
-/* 3. CORREÇÃO: Garante que o col-a (logo/texto) esteja centralizado */
-footer .col-a {
-  text-align: center;
-  align-self: center;
+/* .col-a ou .col-r (para cobrir os dois) */
+footer .col-a,
+footer .col-r {
+ text-align: center;
+  align-self: center; /* Centraliza o container da coluna */
 }
 
 footer .logo {
- display: inline-block;
+ display: inline-block; 
  margin-bottom: 2.4rem;
 }
 
-/* (Adicione esta classe ao seu <img> do logo no rodapé) */
-footer .logo-footer {
-  width: 40px; 
-  height: 40px;
-  margin-bottom: 1.6rem;
-}
-
+/* Logo (SVG grande do seu HTML original - como na foto mobile) */
 footer .logo svg {
  width: 23.6rem;
  height: 3.1rem;
@@ -481,21 +477,21 @@ footer .logo path {
 footer p {
  color: var(--brand-beige);
  line-height: 2;
- margin-bottom: 0; /* Removido margin-bottom para o mobile */
-  text-align: center; /* Garante que o texto esteja centralizado */
+ margin-bottom: 0;
+  text-align: center; /* Força centralização do texto */
 }
 
-/* 4. CORREÇÃO: Centraliza os ícones no mobile */
 footer .social-links {
- justify-content: center; 
+ justify-content: center; /* Centraliza ícones no mobile */
 }
 
 /* (Se estiver usando <img> para ícones) */
 footer .social-links img {
   width: 24px;
   height: 24px;
-  filter: brightness(0) invert(1); /* Deixa a imagem branca */
+  filter: brightness(0) invert(1); 
 }
+
 
 /*=== BACK TO TOP =================================*/
 #backToTopButton {
@@ -516,7 +512,7 @@ footer .social-links img {
  transform: translateY(0);
 }
 
-/*=== RESPONSIVO (DESKTOP) =================================*/
+/*=== RESPONSIVO (DESKTOP - DUAS COLUNAS) =================================*/
 @media (min-width: 1024px) {
 
  /*=== GERAL =================================*/
@@ -653,8 +649,9 @@ footer .social-links img {
  nav#navigation .menu li a:hover::after {
   padding-inline: 0.8rem;
   width: 100%;
-}
-nav#navigation.scroll .menu li a.active,
+ }
+
+ nav#navigation.scroll .menu li a.active,
  nav#navigation.scroll .menu li a:hover {
   opacity: 1;
  }
@@ -762,45 +759,41 @@ nav#navigation.scroll .menu li a.active,
   width: 40.4rem;
  }
 
- /*=== FOOTER (DESKTOP) =================================*/
- footer {
-  padding-block: 6rem; /* Reduz o padding para ficar como na imagem desktop */
-    text-align: left; /* Restaura o alinhamento à esquerda */
- }
+/*=== FOOTER (DESKTOP - CENTRALIZADO IGUAL MOBILE) =================================*/
+footer {
+  padding-block: 6rem;
+  text-align: center;
+}
 
- footer .wrapper {
-    /* 5. Volta ao layout de 2 colunas no desktop */
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 'A B';
-  display: grid; /* Volta a ser grid */
-  flex-direction: initial; /* Reseta o flex */
-  align-items: center; /* Alinha verticalmente */
-  gap: 0; /* Remove o gap do mobile */
- }
+footer .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+}
 
- /* 6. CORREÇÃO: Usa .col-a (do seu HTML original) */
- footer .col-a { 
-  align-self: center;
-  text-align: left;
-    /* 7. Adiciona flex para o layout lado-a-lado (logo + texto) */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.6rem;
- }
+footer .col-a,
+footer .col-r,
+footer .col-b {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
 
- footer .col-b {
-  align-self: center;
-  justify-self: flex-end;
- }
+footer .logo {
+  margin-bottom: 2.4rem;
+}
 
- footer p {
-  margin-bottom: 0;
-    text-align: left;
- }
+footer p {
+  margin: 0;
+  text-align: center;
+}
 
-  /* 8. Alinha ícones à direita no desktop */
-  footer .social-links {
-    justify-content: flex-end;
-  }
+footer .social-links {
+  justify-content: center;
+}
+
 }
