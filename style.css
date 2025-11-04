@@ -743,8 +743,12 @@ footer .social-links {
     grid-template-areas: 'A B';
   }
 
-  footer .col-a {
-    align-self: center;
+  footer .col-r {  display: flex;
+  flex-direction: column; /* Empilha os itens (logo acima do texto) */
+  align-items: center;   /* Centraliza tudo horizontalmente */
+
+  /* Esta linha é do seu CSS original (layout desktop), pode manter */
+  align-self: center; 
   }
 
 
